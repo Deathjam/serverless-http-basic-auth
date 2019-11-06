@@ -1,5 +1,5 @@
 exports.handler = function (event, context, callback) {
-  var authorizationHeader = event.headers.Authorization
+  var authorizationHeader = event.headers.authorization
 
   if (!authorizationHeader) return callback('Unauthorized')
 
