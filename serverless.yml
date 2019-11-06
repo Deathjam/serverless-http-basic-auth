@@ -3,13 +3,16 @@ service: aws-nodejs
 provider:
   name: aws
   runtime: nodejs6.10
+  stage: Production
+  region: us-east-1
+  runtime: nodejs10.x
 
 functions:
-  hello:
-    handler: handler.hello
+  HTTPAuth:
+    handler: handler.HTTPAuth
     events:
       - http:
-          path: /hi
+          path: /Prod
           method: get
           authorizer:
             name: authorizer
