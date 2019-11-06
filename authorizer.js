@@ -8,7 +8,7 @@ exports.handler = function (event, context, callback) {
   var username = plainCreds[0]
   var password = plainCreds[1]
 
-  if (!(username === 'admin' && password === 'secret')) return callback('Unauthorized')
+  if (!(username === 'admin' && password === 'uploader')) return callback('Unauthorized')
 
   var authResponse = buildAllowAllPolicy(event, username)
 
